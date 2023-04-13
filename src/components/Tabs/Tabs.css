@@ -1,0 +1,35 @@
+.tabs {
+  margin-top: 5px;
+  background-color: #f9f9f9;
+  width: 100%;
+  display: flex;
+}
+
+.tabs img {
+  width: 20px;
+  height: 20px
+}
+
+.tab.selected {
+  background: #ffffff;
+  border-width: 1px 1px 0px 1px;
+  border-style: solid;
+  border-color: #97ddf3;
+  border-radius: 11px 11px 0px 0px;
+}
+
+.tab {
+  /* margin: auto; */
+  padding: 10px;
+  width: 100%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+.tab span {
+  margin: auto;
+  margin-left: 5px;
+}

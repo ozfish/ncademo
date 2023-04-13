@@ -1,0 +1,16 @@
+.card-container {
+  /* position: absolute; */
+  width: 277px;
+  min-height: 444px;
+  /* left: 241px;
+  top: 237px; */
+  padding: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
+  /* border-radius: 30px; */
+}
+
+.disaled-card {
+  pointer-events: none;
+  opacity: 0.5;
+}

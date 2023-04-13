@@ -1,0 +1,14 @@
+.footer-container {
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(255 255 255 / 59%);
+  color: black;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer-container span {
+  font-size: 15px;
+}

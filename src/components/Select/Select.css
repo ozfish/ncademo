@@ -1,0 +1,15 @@
+.select {
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 14px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+}
+
+.select:focus, .select:active {
+  outline: none;
+}

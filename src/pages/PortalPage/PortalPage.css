@@ -1,0 +1,54 @@
+
+.center-message {
+  position: absolute;
+  z-index: 1;
+}
+
+.phone-logo {
+  width: 203px;
+  height: 203px;
+}
+
+.center-message h2 {
+  margin-top: 10px;
+}
+
+.center-message h4 {
+  margin-top: 10px;
+}
+
+.center-message span {
+  margin-top: 10px;
+}
+
+.center-message .btn {
+  margin-top: 10px;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.center-message a {
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .center-message {
+    width: auto;
+  }  
+}
+
+@media (min-width: 500px) {
+  .center-message {
+    width: 100%;
+  }
+  .center-message > div {
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.mt-20 {
+  margin-top: 20%;
+}

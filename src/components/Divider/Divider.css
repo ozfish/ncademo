@@ -1,0 +1,9 @@
+.divider {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 15px;
+  text-transform: capitalize;
+  color: #0b8ecf;
+}
