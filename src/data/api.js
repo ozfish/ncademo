@@ -43,6 +43,7 @@ export const createAccount = async (name) => {
           {
             Name: name,
             Status: "ACTIVE",
+            Owner: "NCAConsumer",
             ClientSegment: "Consumer",
             AccountTypeId: await getAccountType(),
           },
@@ -58,41 +59,49 @@ export const createAccount = async (name) => {
 
 export const createBillingProfile = async (AccountId, formData) => {
   try {
+    const requestBody = {
+      Address1: formData.addr1,
+      Email: formData.email,
+      Country: formData.country,
+      City: formData.city,
+      State: formData.state,
+      Zip: formData.zip,
+      TimeZoneId: "0",
+      CurrencyCode: "AUD",
+      MonthlyBillingDate: 31,
+      // BillingMethod: "MAIL",
+      BillingMethod: "Electronic Payment",
+      BillingCycle: "52-53 WEEK CALENDAR",
+      CalendarType: "4-4-4",
+      CalendarClosingMonth: "June",
+      CalendarClosingWeekday: "Sunday",
+      ManualCloseFlag: "1",
+      InvoiceApprovalFlag: "1",
+      PaymentTermDays: "14",
+      BillTo: `${formData.firstName} ${formData.lastName}`,
+      InvoiceTemplateId: await findDefaultInvoiceTemplateId(),
+      Status: "ACTIVE",
+      AccountId,
+    };
     const bpResponse = await fetch(
       `${process.env.REACT_APP_BP_URL}/BILLING_PROFILE`,
       {
         method: "POST",
         body: JSON.stringify({
-          brmObjects: [
-            {
-              Address1: formData.addr1,
-              Email: formData.email,
-              Country: formData.country,
-              City: formData.city,
-              State: formData.state,
-              Zip: formData.zip,
-              TimeZoneId: "0",
-              CurrencyCode: "AUD",
-              MonthlyBillingDate: 31,
-              // BillingMethod: "MAIL",
-              BillingMethod: "Electronic Payment",
-              BillingCycle: "52-53 WEEK CALENDAR",
-              CalendarType: "4-4-4",
-              CalendarClosingMonth: "June",
-              CalendarClosingWeekday: "Sunday",
-              ManualCloseFlag: "1",
-              InvoiceApprovalFlag: "1",
-              PaymentTermDays: "14",
-              BillTo: `${formData.firstName} ${formData.lastName}`,
-              InvoiceTemplateId: await findDefaultInvoiceTemplateId(),
-              Status: "ACTIVE",
-              AccountId,
-            },
-          ],
+          brmObjects: [requestBody],
         }),
         headers: { sessionId },
       }
     ).then((resp) => resp.json());
+    requestBody.Id = bpResponse.createResponse[0].Id;
+    await fetch(`${process.env.REACT_APP_BP_URL}/BILLING_PROFILE`, {
+      method: "PUT",
+      body: JSON.stringify({
+        brmObjects: [requestBody],
+      }),
+      headers: { sessionId },
+    });
+
     const savedBP = await fetch(
       `${process.env.REACT_APP_BP_URL}/query?sql=SELECT bp.HostedPaymentPageExternalId FROM Billing_Profile bp WHERE bp.Id = ${bpResponse?.createResponse?.[0].Id}`,
       { headers: { sessionId } }
