@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.308e2ea0.css",
-    "main.js": "/static/js/main.3d6a2899.js",
-    "static/js/787.ebea8384.chunk.js": "/static/js/787.ebea8384.chunk.js",
-    "static/media/Home-background.png": "/static/media/Home-background.4964678d78c2e1346910.png",
-    "static/media/register-background.png": "/static/media/register-background.8e014dc3a08790817a40.png",
-    "static/media/home-page-cloud-data.png": "/static/media/home-page-cloud-data.5a2fc7e2abc3f26d4db0.png",
-    "index.html": "/index.html",
-    "main.308e2ea0.css.map": "/static/css/main.308e2ea0.css.map",
-    "main.3d6a2899.js.map": "/static/js/main.3d6a2899.js.map",
-    "787.ebea8384.chunk.js.map": "/static/js/787.ebea8384.chunk.js.map"
+    "main.css": "/ncademo/static/css/main.cd83d586.css",
+    "main.js": "/ncademo/static/js/main.62f4c02b.js",
+    "static/js/787.ebea8384.chunk.js": "/ncademo/static/js/787.ebea8384.chunk.js",
+    "static/media/Home-background.png": "/ncademo/static/media/Home-background.4964678d78c2e1346910.png",
+    "static/media/register-background.png": "/ncademo/static/media/register-background.8e014dc3a08790817a40.png",
+    "static/media/home-page-cloud-data.png": "/ncademo/static/media/home-page-cloud-data.5a2fc7e2abc3f26d4db0.png",
+    "index.html": "/ncademo/index.html",
+    "main.cd83d586.css.map": "/ncademo/static/css/main.cd83d586.css.map",
+    "main.62f4c02b.js.map": "/ncademo/static/js/main.62f4c02b.js.map",
+    "787.ebea8384.chunk.js.map": "/ncademo/static/js/787.ebea8384.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.308e2ea0.css",
-    "static/js/main.3d6a2899.js"
+    "static/css/main.cd83d586.css",
+    "static/js/main.62f4c02b.js"
   ]
 }
